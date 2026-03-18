@@ -27,7 +27,7 @@ def record_decision(agent: str, action: str, risk: str, decision: str) -> Dict[s
     previous_hash = entries[-1]["hash"] if entries else "0"
     
     entry = {
-        "timestamp": datetime.datetime.utcnow().isoformat(),
+        "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "agent": agent,
         "action": action,
         "risk": risk,

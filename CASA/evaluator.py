@@ -1,4 +1,3 @@
-print("Evaluator loaded")
 from CASA.risk_engine import classify_risk
 from CASA.policy_loader import check_policy
 from CASA.gate_engine import gate_decision

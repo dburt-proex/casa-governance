@@ -1,4 +1,4 @@
-from config import RISK_MATRIX
+from .config import RISK_MATRIX
 
 
 def classify_risk(action, signals_context=None):

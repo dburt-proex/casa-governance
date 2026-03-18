@@ -1,5 +1,5 @@
 import json
-from config import POLICY_FILE
+from .config import POLICY_FILE
 
 
 def load_policy():

@@ -203,5 +203,5 @@ class GovernanceDashboard:
     
     def _get_timestamp(self) -> str:
         """Get current timestamp ISO format."""
-        from datetime import datetime
-        return datetime.utcnow().isoformat()
+        from datetime import datetime, timezone
+        return datetime.now(timezone.utc).isoformat()

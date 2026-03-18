@@ -16,7 +16,7 @@ def log_event(agent, action, risk, decision, signals=None, policy_version=None):
     """
     entry = {
         "decision_id": str(uuid.uuid4()),
-        "time": datetime.datetime.utcnow().isoformat(),
+        "time": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "agent": agent,
         "action": action,
         "risk": risk,
@@ -27,7 +27,3 @@ def log_event(agent, action, risk, decision, signals=None, policy_version=None):
 
     with open("ledger.log", "a") as f:
         f.write(json.dumps(entry) + "\n")
-
-
-# backwards compatibility alias
-record_decision = log_event

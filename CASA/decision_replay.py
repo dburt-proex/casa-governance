@@ -9,7 +9,7 @@ Replays historical decisions under new policy conditions to enable:
 """
 
 from typing import Dict, List, Any, Optional
-from datetime import datetime
+from datetime import datetime, timezone
 import uuid
 
 from CASA.audit_ledger import read_ledger
@@ -130,7 +130,7 @@ class DecisionReplayEngine:
                 "route": new_route,
                 "risk_score": new_risk,
                 "confidence": self._compute_confidence(signals),
-                "timestamp": datetime.utcnow().isoformat(),
+                "timestamp": datetime.now(timezone.utc).isoformat(),
             },
             "changed": changed,
             "risk_delta": risk_delta,
