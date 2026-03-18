@@ -31,3 +31,20 @@ CASA prevents:
 - silent failure modes
 - policy violations
 
+## Dependencies
+
+All dependencies in `requirements.txt` are pinned to exact versions for reproducible, deterministic builds.
+
+To install:
+
+```bash
+pip install -r requirements.txt
+```
+
+To update a pin after testing a new version:
+
+1. Upgrade the package: `pip install --upgrade <package>`
+2. Check the installed version: `pip show <package> | grep Version`
+3. Update the corresponding line in `requirements.txt` with the exact new version
+4. Run the full test suite to verify compatibility
+
